@@ -7,23 +7,26 @@
 
 body{
   font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Hiragino Kaku Gothic ProN,Meiryo,sans-serif;
-  /*overflow: hidden;*/
+  background-image: url("/common/bg.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50% bottom;
 }
 ::-webkit-scrollbar{
-  width: 10px;
+  display: none;
 }
 ::-webkit-scrollbar-track{
-  background: #4B4B4B;
+  display: none;
 }
 ::-webkit-scrollbar-thumb{
-  background: #727272;
-  border-radius: 10px;
+  display: none;
 }
 
 #main{
   max-width: 100%;
   width: 1024px;
   margin: 0 auto;
+  height: 100vh;
 }
 
 section{
@@ -35,6 +38,7 @@ section .content{
   display: table-cell;
   vertical-align: middle;
   text-align: center;
+  background-color:rgba(255,255,255,0.5);
 }
 
 /*pc*/
@@ -54,12 +58,17 @@ section#top .content p{
 
 a.help{
   display: block;
-  border: #333 solid 1px;
+  border: rgba(255,255,255,0.75) solid 1px;
   width: 325px;
   margin: 2em auto;
   padding: 15px 0;
   border-radius: 10px;
   position: relative;
+  background-color:rgba(255,255,255,0.75);
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color  0.3s ease;
 }
 a.help::before{
   display: inline-block;
@@ -78,38 +87,86 @@ a.help::after{
   right: 10px;
 }
 a.help:hover{
-  background-color: #E5E5E5;
+  background-color: white;
 }
 
-a.next{
+.next{
   display: inline-block;
-  border: #333 solid 1px;
+  border: rgba(255,255,255,0.5) solid 1px;
+  font-size: 16px;
   margin: 1em 1em;
   padding: 15px 0;
   width: 300px;
   position: relative;
+  background-color:rgba(255,255,255,0.5);
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color  0.3s ease;
 }
-a.next::after{
+.next:hover{
+  background-color: white;
+}
+
+.next::before,
+.next::after {
   position: absolute;
-  content: ">";
-  right: 15px;
-  transform: scale(1.5, 1) rotate(90deg);
+  z-index: 2;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 2px solid transparent;
 }
+.next::before {
+  top: -2px;
+  left: -2px;
+}
+.next::after {
+  bottom: -2px;
+  right: -2px;
+}
+.next:hover {
+  color: black;
+}
+.next:hover::before,
+.next:hover::after {
+  width: 100%;
+  height: 100%;
+}
+.next:hover::before {
+  border-bottom-color: #999;
+  border-left-color: #999;
+  transition: height .3s, width .3s .3s;
+}
+.next:hover::after {
+  border-top-color: #999;
+  border-right-color: #999;
+  transition: height .3s, width .3s .3s;
+}
+
+.back{
+  display: block;
+  margin: 1em auto;
+}
+
 
 .tw-id{
   display: inline-block;
-  border: #333 solid 1px;
+  border: rgba(255,255,255,0.8) 1px solid;
+  background-color:rgba(255,255,255,0.8);
   line-height: 32px;
   font-size: 18px;
   margin: 0.75em 0;
   padding: 0.25em 0.75em;
   border-radius: 10px;
+  font-weight: bold;
 }
 input[type="text"]{
   border: none;
   padding: 0 0.75em;
   line-height: 32px;
   font-size: 18px;
+  background-color:rgba(255,255,255,0);
 }
 input[type="text"]:focus{
   outline:none;
@@ -126,3 +183,115 @@ textarea{
   font-size: 18px;
   resize: none;
 }
+
+.sharebut{
+  display: inline-block;
+  border: rgba(255,255,255,0.5) solid 1px;
+  font-size: 16px;
+  margin: 1em 1em;
+  padding: 15px 0;
+  width: 200px;
+  position: relative;
+  background-color:rgba(255,255,255,0.5);
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color  0.3s ease;
+}
+.sharebut i{
+  margin: 0 0.5em;
+}
+
+.sharebut:hover{
+  background-color: white;
+}
+
+.sharebut::before,
+.sharebut::after {
+  position: absolute;
+  z-index: 2;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 2px solid transparent;
+}
+.sharebut::before {
+  top: -2px;
+  left: -2px;
+}
+.sharebut::after {
+  bottom: -2px;
+  right: -2px;
+}
+.sharebut:hover {
+  color: black;
+}
+.sharebut:hover::before,
+.sharebut:hover::after {
+  width: 100%;
+  height: 100%;
+}
+.sharebut:hover::before {
+  border-bottom-color: #999;
+  border-left-color: #999;
+  transition: height .3s, width .3s .3s;
+}
+.sharebut:hover::after {
+  border-top-color: #999;
+  border-right-color: #999;
+  transition: height .3s, width .3s .3s;
+}
+
+
+.tw_sharebut:hover{
+  background-color: white;
+}
+.tw_sharebut::before,
+.tw_sharebut::after {
+  position: absolute;
+  z-index: 2;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 2px solid transparent;
+}
+.tw_sharebut::before {
+  top: -2px;
+  left: -2px;
+}
+.tw_sharebut::after {
+  bottom: -2px;
+  right: -2px;
+}
+.tw_sharebut:hover {
+  background-color: #00acee;
+  color: white;
+}
+.tw_sharebut:hover::before,
+.tw_sharebut:hover::after {
+  width: 100%;
+  height: 100%;
+}
+.tw_sharebut:hover::before {
+  border-bottom-color: #00acee;
+  border-left-color: #00acee;
+  transition: height .3s, width .3s .3s;
+}
+.tw_sharebut:hover::after {
+  border-top-color: #00acee;
+  border-right-color: #00acee;
+  transition: height .3s, width .3s .3s;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 12px;
+  padding: 0 0.5em;
+}
+footer a{
+  color: blue;
+  text-decoration: underline;
+}
+
