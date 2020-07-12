@@ -6,7 +6,7 @@ var netchokaigi = "";
 
 if(today.getTime() >= netchokaigi_summer_start.getTime()){
   if(today.getTime() <= netchokaigi_summer_finish.getTime()){
-    var netchokaigi = "Yes"
+    netchokaigi = "Yes";
     document.getElementById("default").classList.add("hide");
     document.getElementById("netchokaigi").classList.remove("hide");
   }

@@ -1,89 +1,24 @@
-(function () {
-  'use strict';
+var input_twiID = document.getElementById("twitterid").value;
+if (input_twiID != "") {
+  input_twiID = "@" + input_twiID + " ";
+}
 
-  // 変数
-  var wrap = document.getElementById('main'),
-    elements = document.querySelectorAll('section'), // 1画面分スクロールさせる要素
-    elRect = [],
-    elTop = [],
-    count = 0,
-    wheelFlag = false;
+//ネット超会議仕様設定
+var today = new Date(2020, 8, 9, 16, 00, 00);
+var netchokaigi_summer_start = new Date(2020, 8, 9, 16, 00, 00);
+var netchokaigi_summer_finish = new Date(2020, 8, 16, 23, 00, 00);
+var result = "";
+var resultw = "";
 
-  // 要素位置取得
-  function getElTop() {
-    for (var i = 0; i < elements.length; i++) {
-      elRect.push(elements[i].getBoundingClientRect());
-    }
-    for (var i = 0; i < elRect.length; i++) {
-      elTop.push(elRect[i].top + window.scrollY);
-    }
+if (today.getTime() >= netchokaigi_summer_start.getTime()) {
+  if (today.getTime() <= netchokaigi_summer_finish.getTime()) {
+    result = input_twiID + "お前は #シベリア送り だ！ #ネット超会議2020夏 #ユーザー企画 https://siberia.nekozuki.me/lets-go-siberia";
+    resultw = "https://twitter.com/intent/tweet?text=" + input_twiID + "お前は%20%23シベリア送り%20だ！%20%23ネット超会議2020夏%20%23ユーザー企画%20&url=https%3A%2F%2Fsiberia.nekozuki.me%2Flets-go-siberia";
   }
-  getElTop();
+}else{
+  result = input_twiID + "お前は #シベリア送り だ！https://siberia.nekozuki.me/lets-go-siberia";
+  resultw = "https://twitter.com/intent/tweet?text=" + input_twiID + "お前は%20%23シベリア送り%20だ！&url=https%3A%2F%2Fsiberia.nekozuki.me%2Flets-go-siberia";
+}
 
-  // 画面リサイズ処理
-  window.addEventListener('resize', function () {
-    elRect = [];
-    elTop = [];
-    getElTop();
-    window.scrollTo(0, elTop[count]);
-  });
-
-  wrap.addEventListener('wheel', function (e) {
-    e.preventDefault();
-    if (!wheelFlag) {
-      wheelFlag = true;
-      if (e.deltaY > 0) {
-        if (count >= elements.length - 1) {
-          count = elements.length - 1;
-        } else {
-          count++;
-        }
-      } else if (e.deltaY < 0) {
-        if (count <= 0) {
-          count = 0;
-        } else {
-          count--;
-        }
-      }
-      setTimeout(function () {
-        wheelFlag = false;
-      }, 800);
-      setTimeout(function () {
-        window.scrollTo({
-          top: elTop[count],
-          behavior: 'smooth',
-        });
-      }, 20);
-    }
-  });
-
-  document.getElementById('to_top').onclick = function () {
-    window.scrollTo({ // count番目の要素へスクロール
-      top: elTop[0],
-      behavior: 'smooth',
-    });
-  };
-  document.getElementById('to_setting').onclick = function () {
-    window.scrollTo({ // count番目の要素へスクロール
-      top: elTop[1],
-      behavior: 'smooth',
-    });
-  };
-
-  document.getElementById('to_share').onclick = function () {
-    window.scrollTo({ // count番目の要素へスクロール
-      top: elTop[2],
-      behavior: 'smooth',
-    });
-
-    var input_twiID = document.getElementById("twitterid").value;
-    if (input_twiID != "") {
-      input_twiID = "@" + input_twiID + " ";
-    }
-    var result = input_twiID + "お前は #シベリア送り だ！https://siberia.nekozuki.me/lets-go-siberia";
-    const resultw = "https://twitter.com/intent/tweet?text=" + input_twiID + "お前は%20%23シベリア送り%20だ！&url=https%3A%2F%2Fsiberia.nekozuki.me%2Flets-go-siberia";
-
-    document.getElementById("sharebox").innerHTML = result;
-    document.getElementById("tw_sharebut").href = resultw;
-  };
-}());
+document.getElementById("sharebox").innerHTML = result;
+document.getElementById("tw_sharebut").href = resultw;
