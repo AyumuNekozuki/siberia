@@ -1,0 +1,61 @@
+.hide{
+  display: none;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  color: black;
+  text-decoration: none;
+}
+
+body{
+  font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Hiragino Kaku Gothic ProN,Meiryo,sans-serif;
+  background-image: url("/common/bg.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50% bottom;
+  overflow-y: hidden;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+::-webkit-scrollbar-track{
+  display: none;
+}
+::-webkit-scrollbar-thumb{
+  display: none;
+}
+
+#main{
+  max-width: 100%;
+  width: 1024px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+section{
+  height: 100vh;
+  width: 100%;
+  display: table;
+}
+section .content{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  background-color:rgba(255,255,255,0.75);
+  animation: fadeIn 2000ms ease 0ms 1 normal;
+}
+
+.content p{
+  margin: 1.5em 0;
+}
+
+@keyframes fadeIn { 
+  0% {
+    opacity: 0;
+  } 
+  100% {
+    opacity: 1;
+  } 
+}

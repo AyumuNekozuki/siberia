@@ -6,10 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>シベリア送り</title>
   <link rel="stylesheet" href="/common/index.css">
+  <link rel="stylesheet" href="/common/loading.css">
 
 </head>
 
 <body>
+  <div id="loader-bg" class="is-hide">
+    <div id="loader" class="is-hide">
+      <p>
+        <img src="/common/loading.gif"><br>
+        NOW LOADING
+      </p>
+    </div>
+  </div>
   <div id="main">
     <section id="top">
       <div class="content">
@@ -34,11 +43,12 @@
       <div class="content">
         <h2>シベリアに送る</h2>
         <textarea name="sharebox" id="sharebox"
-          disabled>お前は #シベリア送り だ！https://siberia.nekozuki.me/lets-go-siberia</textarea>
+         disabled >お前は #シベリア送り だ！https://siberia.nekozuki.me/lets-go-siberia</textarea>
         <a class="sharebut tw_sharebut" id="tw_sharebut" target="_blank"
           href="https://twitter.com/intent/tweet?text=お前は%20%23シベリア送り%20だ！&url=https%3A%2F%2Fsiberia.nekozuki.me%2Flets-go-siberia">
           Tweet</a>
-        <a class="next sharebut">Copy</a>
+        <a class="next sharebut" id="copy">Copy</a>
+        
         <button class="next back" id="to_top">戻る</button>
       </div>
 
@@ -50,6 +60,8 @@
   </footer>
 
   <script src="/common/main.js"></script>
+  <script src="/common/loading.js"></script>
+  <script src="/common/copy.js"></script>
 </body>
 
 </html>
