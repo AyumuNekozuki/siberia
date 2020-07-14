@@ -70,7 +70,7 @@
     });
   };
 
-  document.getElementById('to_share').onclick = function () {
+  document.getElementById('to_share_next').onclick = function () {
     window.scrollTo({ // count番目の要素へスクロール
       top: elTop[2],
       behavior: 'smooth',
