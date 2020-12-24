@@ -7,7 +7,7 @@
 
 body{
   font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Hiragino Kaku Gothic ProN,Meiryo,sans-serif;
-  background-image: url("/common/bg.png");
+  background-image: url("/common/maki.png");
   background-size: cover;
   background-attachment: fixed;
   background-position: 50% bottom;
@@ -144,6 +144,26 @@ a.help:hover{
 .next:hover::after {
   border-top-color: #999;
   border-right-color: #999;
+  transition: height .3s, width .3s .3s;
+}
+
+.makilive{
+  border-color: #FDA40075;
+  background-color:#FDA40075;
+}
+.makilive:hover{
+  color: #FDA400;
+  font-weight: bold;
+  background-color: #f5f5f5;
+}
+.makilive:hover::before {
+  border-bottom-color: #FDA400;
+  border-left-color: #FDA400;
+  transition: height .3s, width .3s .3s;
+}
+.makilive:hover::after {
+  border-top-color: #FDA400;
+  border-right-color: #FDA400;
   transition: height .3s, width .3s .3s;
 }
 

@@ -11,7 +11,7 @@
 
 body{
   font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Hiragino Kaku Gothic ProN,Meiryo,sans-serif;
-  background-image: url("/common/bg.png");
+  background-image: url("/common/maki.png");
   background-size: cover;
   background-attachment: fixed;
   background-position: 50% bottom;
@@ -47,7 +47,11 @@ section .content{
   animation: fadeIn 2000ms ease 0ms 1 normal;
 }
 
+
 .content p{
+  margin: 1.5em 0;
+}
+.content.maki p{
   margin: 1.5em 0;
 }
 
@@ -58,4 +62,16 @@ section .content{
   100% {
     opacity: 1;
   } 
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 12px;
+  padding: 0 0.5em;
+}
+footer a{
+  color: blue;
+  text-decoration: underline;
 }
