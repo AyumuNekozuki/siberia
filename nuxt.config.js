@@ -12,7 +12,7 @@ export default {
       { hid: 'og:url', property: 'og:url', content: 'https://siberia.nekozuki.me' },
       { hid: 'og:title', property: 'og:title', content: 'シベリア送り' },
       { hid: 'og:description', property: 'og:description', content: 'あなたがたをシベリアへお送りします' },
-      { hid: 'og:image', property: 'og:image', content: 'https://siberia.nekozuki.me/common/bg.png' },
+      { hid: 'og:image', property: 'og:image', content: 'https://siberia.nekozuki.me/ogp/comingsoon.png' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@nekozuki_2525' },
     ],
