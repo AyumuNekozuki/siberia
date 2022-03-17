@@ -3,7 +3,7 @@
     <div class="title">
       <p>ユーザー企画</p>
       <h1><span class="red">超</span>シベリア送り</h1>
-      <p>Coming Soon</p>
+      <p class="info"><a href="https://blog.nekozuki.me/nl44" target="_blank" rel="noopener noreferrer"><span>2022/03/17</span>企画中止のお知らせ</a></p>
     </div>
     <footer>
       &copy; 2020-2022 AyumuNekozuki
@@ -63,7 +63,34 @@ body{
       font-family: "M PLUS Rounded 1c",sans-serif;
       font-size: 24px;
     }
+
+    .info{
+      display: flex;
+      align-items: flex-end;
+      margin: 2rem 0 0;
+      padding: 0 1rem;
+      font-size: 1.3rem;
+      border-bottom: 2px solid #e73a47;
+      
+
+      a{
+        color: #252525;
+        text-decoration: none;
+        transition: color ease .2s;
+
+        &:hover{
+          color: #e73a47;
+        }
+      }
+
+      span{
+        font-size: 1rem;
+        margin: 0 .5rem 0 0;
+      }
+    }
   }
+
+
 
   footer{
     display: flex;
@@ -75,6 +102,7 @@ body{
     font-size: 12px;
     background: #e73a47;
     color: white;
+    font-family: "M PLUS Rounded 1c",sans-serif;
   }
 
   #to_2020{
